@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    volumes:
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+      - ./etc/nginx/sites-available:/etc/nginx/sites-enabled
+      - ./etc/ssl/server.cert:/etc/ssl/server.cert
+      - ./etc/ssl/myserver.key:/etc/ssl/myserver.key
+      - ./:/var/www/wishlist
+    ports:
+      - 8443:443
+    links:
+      - php
+  php:
+    build:
+      context: .
+      args:
+        - WITH_XDEBUG=false
+    env_file: .env
+    environment:
+      - REDIS_HOST=127.0.0.1
+    volumes:
+      - ./:/var/www/wishlist
+      - ./etc/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379

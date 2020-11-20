@@ -1,21 +1,11 @@
-# README #
+# Wishlist App #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Let us write a small wishlist application to fight the monopoly of Amazon.    
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Run `docker-compose up`
+* Open `https://localhost:8443` in your browser
 
 ### Contribution guidelines ###
 
@@ -25,5 +15,4 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Timmo Schulte
